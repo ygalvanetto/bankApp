@@ -1,4 +1,4 @@
-package business;
+package ch.hearc.ig.odi.bankApp.business;
 
 
 import java.util.*;
@@ -9,6 +9,7 @@ public class Customer {
     private int number;
     private String firstName;
     private String lastName;
+
 
     public Customer(int number, String firstName, String lastName) {
         this.accounts = accounts;

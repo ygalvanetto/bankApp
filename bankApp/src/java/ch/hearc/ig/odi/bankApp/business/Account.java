@@ -1,4 +1,4 @@
-package business;
+package ch.hearc.ig.odi.bankApp.business;
 
 public class Account {
 

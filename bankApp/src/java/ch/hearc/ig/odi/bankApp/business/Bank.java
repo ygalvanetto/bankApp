@@ -1,4 +1,4 @@
-package business;
+package ch.hearc.ig.odi.bankApp.business;
 
 import java.util.ArrayList;
 
