@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Nouveau client</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <div>Création d'un nouveau client</div><br/>
+        
+       <form method="GET"  action="../InsertClient">
+            Numero : <input type="number" name="numero" /> <br/>
+            Nom : <input type="text" name="nom" /> <br/>
+            Prénom : <input type="text" name="prenom" /> <br/>
+            <input type="button" value="Réinitialiser" />
+            <input type="submit" value="Valider" />
+            <input type="button" value="Annuler" />
+        </form>
+    </h:body>
+</html>
