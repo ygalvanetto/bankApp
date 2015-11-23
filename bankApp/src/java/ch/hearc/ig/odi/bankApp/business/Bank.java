@@ -1,6 +1,8 @@
 package ch.hearc.ig.odi.bankApp.business;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 
 public class Bank {
     private int number;
@@ -30,15 +32,30 @@ public class Bank {
         return customer;
     }
     
-    public void addCustomer (int number, String fn, String ln){
+    public Customer addCustomer(int number, String fn, String ln){
         Customer customer = new Customer (number, fn, ln);
         
         listCustomer.add(customer);
+        
+        return customer;
     }
     
     public void addAccount (String number, String name, double rate, Customer customer) {
         Account account = new Account(customer, number, name, rate);
         
         listAccount.add(account);
+    }
+    
+    public Map<Integer, Customer> getCustomers(){
+        Map<Integer, Customer> backList = null;
+        
+        Iterator<Customer> it = listCustomer.iterator();
+ 
+        while (it.hasNext()) {
+             Customer c1 = (Customer) it.next();
+             backList.put(c1.getNumber(),c1);
+        }
+        
+        return backList;
     }
 }
