@@ -19,6 +19,12 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/index.xhtml</welcome-file>
-    </welcome-file-list>
+        <welcome-file>faces/customersList.xhtml</welcome-file>
+    
+        </welcome-file-list>
+    <ejb-local-ref>
+        <ejb-ref-name>services</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <ejb-link>#Services</ejb-link>
+    </ejb-local-ref>
 </web-app>
