@@ -9,9 +9,9 @@
     <h:body>
         <h2>Liste des clients</h2>
                 
-        <h:dataTable var="cust" value="#{customersListe.customersDM}">
+        <h:dataTable var="cust" value="#{CustomersBean.customersDM}">
             
-            <h:column>
+            <!--<h:column>
                 <f:facet name="header">Nom</f:facet>
                 <h:outputText value="cust.lastName" />
             </h:column>
@@ -19,7 +19,7 @@
             <h:column>
                 <f:facet name="header">Prénom</f:facet>
                 <h:outputText value="cust.firstName" />
-            </h:column>
+            </h:column>-->
 
         </h:dataTable>
         

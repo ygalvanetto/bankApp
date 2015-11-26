@@ -1,7 +1,7 @@
 package ch.hearc.ig.odi.bankApp.business;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Bank {
@@ -47,15 +47,15 @@ public class Bank {
     }
     
     public Map<Integer, Customer> getCustomers(){
-        Map<Integer, Customer> backList = null;
-        
-        Iterator<Customer> it = listCustomer.iterator();
- 
-        while (it.hasNext()) {
-             Customer c1 = (Customer) it.next();
-             backList.put(c1.getNumber(),c1);
-        }
-        
+        Map<Integer, Customer> backList = new HashMap<>();       
+       
+      /* for(Customer c : listCustomer) {
+           backList.put(c.getNumber(), c);
+       }
+       
+       Customer c = new Customer(1,"galvanetto","yannick");
+       backList.put(c.getNumber(), c);*/
+       
         return backList;
     }
 }
