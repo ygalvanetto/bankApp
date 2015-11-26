@@ -7,20 +7,21 @@
         <title>My Bank</title>
     </h:head>
     <h:body>
-        
-        <h:dataTable var="emp" value="#{employesLISBean.lesEmployesDM}">
-
-                    <h:column>
-                        <f:facet name="header">Nom</f:facet>
-                        <h:outputText value="emp.nom" />
-                    </h:column>
+        <h2>Liste des clients</h2>
+                
+        <h:dataTable var="cust" value="#{customersListe.customersDM}">
             
-                    <h:column>
-                        <f:facet name="header">Prénom</f:facet>
-                        <h:outputText value="emp.prenom" />
-                    </h:column>
+            <h:column>
+                <f:facet name="header">Nom</f:facet>
+                <h:outputText value="cust.lastName" />
+            </h:column>
 
-            </h:dataTable>
+            <h:column>
+                <f:facet name="header">Prénom</f:facet>
+                <h:outputText value="cust.firstName" />
+            </h:column>
+
+        </h:dataTable>
         
         <br/><br/>
         <a href="createCustomer.xhtml">Ajouter un nouveau client</a>

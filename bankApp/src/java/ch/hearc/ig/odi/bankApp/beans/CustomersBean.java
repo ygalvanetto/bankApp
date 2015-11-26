@@ -9,29 +9,29 @@ package ch.hearc.ig.odi.bankApp.beans;
 import ch.hearc.ig.odi.bankApp.business.Customer;
 import ch.hearc.ig.odi.bankApp.services.Services;
 import java.io.Serializable;
-import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.ManagedBean;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
+import javax.inject.Named;
 
 /**
  *
  * @author Yannick Galvanetto<yannick.galvanetto@he-arc.ch>
  */
-@ManagedBean(name = "employesLISBean")
-@SessionScoped
-public class EmployesLISBean implements Serializable {
+@Named(value="customersListe")
+@RequestScoped
+public class CustomersBean implements Serializable {
     
-    private DataModel<Customer> lesEmployesDM;
+    private Services services;
+    private DataModel<Customer> customersDM;
     
-    public EmployesLISBean() {
+    public CustomersBean() {
     }
     
-    public DataModel<Customer> getLesEmployesDM() {
-        Services srv = new Services();
-        lesEmployesDM = new ListDataModel<Customer>();
-        lesEmployesDM.setWrappedData(srv.getCustomersList());
-        return lesEmployesDM;
+    public DataModel<Customer> getCustomersDM() {
+        customersDM = new ListDataModel<Customer>();
+        customersDM.setWrappedData(services.getCustomers());
+        return customersDM;
     }
     
 }
