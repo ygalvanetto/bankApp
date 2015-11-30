@@ -61,6 +61,46 @@
                <to-view-id>/customersList.xhtml</to-view-id>
            </navigation-case>
        </navigation-rule>
+       
+       <navigation-rule>
+           <from-view-id>/customersList.xhtml</from-view-id>
+           <navigation-case>
+               <from-outcome>detailsDuClient</from-outcome>
+               <to-view-id>/detailsCustomer.xhtml</to-view-id>
+           </navigation-case>
+       </navigation-rule>
+       
+       <navigation-rule>
+           <from-view-id>/detailsCustomer.xhtml</from-view-id>
+           <navigation-case>
+               <from-outcome>retourAcceuil</from-outcome>
+               <to-view-id>/customersList.xhtml</to-view-id>
+           </navigation-case>
+       </navigation-rule>
+       
+       <navigation-rule>
+           <from-view-id>/detailsCustomer.xhtml</from-view-id>
+           <navigation-case>
+               <from-outcome>detailsDuCompte</from-outcome>
+               <to-view-id>/detailsCompte.xhtml</to-view-id>
+           </navigation-case>
+       </navigation-rule>
+       
+       <navigation-rule>
+           <from-view-id>/detailsCompte.xhtml</from-view-id>
+           <navigation-case>
+               <from-outcome>retourClientDetails</from-outcome>
+               <to-view-id>/detailsCustomer.xhtml</to-view-id>
+           </navigation-case>
+       </navigation-rule>
+       
+       <navigation-rule>
+           <from-view-id>/detailsCompte.xhtml</from-view-id>
+           <navigation-case>
+               <from-outcome>retourAcceuil</from-outcome>
+               <to-view-id>/customersList.xhtml</to-view-id>
+           </navigation-case>
+       </navigation-rule>
            
      </application>
      

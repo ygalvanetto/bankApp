@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view>
+        <h:head>
+            <f:loadBundle basename="ch.hearc.ig.odi.bankApp.langues.message" var="msg" />
+
+            <title>Bank App</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        </h:head>
+        <h:body>
+            <h1>#{msg['voirCompte']} </h1>
+
+             <h:panelGrid border="1" columns="2" >
+                <h:outputLabel value="#{msg['numero']}" />
+                <h:outputText value="#{detailCompte.number}" />
+                <h:outputLabel value="#{msg['nom']}" />
+                <h:outputText value="#{detailCompte.name}" />
+                <h:outputLabel value="#{msg['balance']}" />
+                <h:outputText value="#{detailCompte.balance}" />
+                <h:outputLabel value="#{msg['taux']}" />
+                <h:outputText value="#{detailCompte.rate}" />
+            </h:panelGrid>
+
+            <h:form>
+                <h:commandButton id="retourClient" value="#{msg['lienRetourClient']}" action="retourClientDetails" />
+                <h:commandButton id="retourAcceuil" value="#{msg['lienRetourAcceuil']}" action="retourAcceuil" />
+            </h:form>
+        </h:body>
+    </f:view>
+</html>

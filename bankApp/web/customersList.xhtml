@@ -22,7 +22,7 @@
                             <f:facet name="header">
                                 <h:outputText value="#{msg['nom']}" />
                             </f:facet>
-                            <h:outputText id="lastname" value="#{cust.lastName}"/>
+                            <h:commandLink id="lastname" value="#{cust.lastName}" action="#{customersbean.detailCustomer(cust)}" />
                         </h:column>
                 </h:dataTable>
 
