@@ -47,15 +47,12 @@ public class Bank {
     }
     
     public Map<Integer, Customer> getCustomers(){
-        Map<Integer, Customer> backList = new HashMap<>();       
+       Map<Integer, Customer> backList = new HashMap<>();       
        
-      /* for(Customer c : listCustomer) {
+       for(Customer c : listCustomer) {
            backList.put(c.getNumber(), c);
        }
        
-       Customer c = new Customer(1,"galvanetto","yannick");
-       backList.put(c.getNumber(), c);*/
-       
-        return backList;
+       return backList;
     }
 }

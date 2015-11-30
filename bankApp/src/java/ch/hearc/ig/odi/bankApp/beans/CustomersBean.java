@@ -12,25 +12,26 @@ import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
  *
  * @author Yannick Galvanetto<yannick.galvanetto@he-arc.ch>
  */
-@Named(value="CustomersBean")
+@Named(value="customersbean")
 @RequestScoped
 public class CustomersBean implements Serializable {
     
-    private Services services;
     private DataModel<Customer> customersDM;
     
+    @Inject Services services;
     public CustomersBean() {
     }
     
     public DataModel<Customer> getCustomersDM() {
-        customersDM = new ListDataModel<Customer>();
-        customersDM.setWrappedData(services.getCustomers());
+        customersDM = new ListDataModel<>();
+        customersDM.setWrappedData(services.getCustomersList());
         return customersDM;
     }
     
