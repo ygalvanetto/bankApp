@@ -46,13 +46,21 @@
            <from-view-id>/createCustomer.xhtml</from-view-id>
            <navigation-case>
                <from-outcome>success</from-outcome>
-               <to-view-id>/customersList.xhtml</to-view-id>
+               <to-view-id>/createCustomerOK.xhtml</to-view-id>
            </navigation-case>
            <navigation-case>
                <from-outcome>error</from-outcome>
-               <to-view-id>/createCustomer.xhtml</to-view-id>
+               <to-view-id>/createCustomerError.xhtml</to-view-id>
            </navigation-case>
-        </navigation-rule>
+       </navigation-rule>
+       
+       <navigation-rule>
+           <from-view-id>/createCustomerOK.xhtml</from-view-id>
+           <navigation-case>
+               <from-outcome>retourAcceuil</from-outcome>
+               <to-view-id>/customersList.xhtml</to-view-id>
+           </navigation-case>
+       </navigation-rule>
            
      </application>
      
