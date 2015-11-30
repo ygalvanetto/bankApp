@@ -9,21 +9,27 @@
         </h:head>
         <h:body>
             <h2>Liste des clients</h2>
+            <h:form>
+                <h:dataTable var="cust" value="#{customersbean.customersDM}">
+                    <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msg['prenom']}" />
+                            </f:facet>
+                            <h:outputText id="firstname" value="#{cust.firstName}"/>
+                        </h:column>
 
-            <h:dataTable var="cust" value="#{customersbean.customersDM}">
-                <h:column>
-                    <f:facet name="header">Nom</f:facet>
-                    <h:outputText value="#{cust.lastName}" />
-                </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msg['nom']}" />
+                            </f:facet>
+                            <h:outputText id="lastname" value="#{cust.lastName}"/>
+                        </h:column>
+                </h:dataTable>
 
-                <h:column>
-                    <f:facet name="header">Prénom</f:facet>
-                    <h:outputText value="#{cust.firstName}" />
-                </h:column>
-            </h:dataTable>
-
-            <br/><br/>
-            <a href="createCustomer.xhtml">Ajouter un nouveau client</a>
+                <br/><br/>
+                
+                <h:commandButton id="addCustomer" value="#{msg['addClient']}" action="createCustomer"/>
+            </h:form>
         </h:body>
     </f:view>
 </html>

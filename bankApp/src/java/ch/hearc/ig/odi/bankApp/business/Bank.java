@@ -2,6 +2,7 @@ package ch.hearc.ig.odi.bankApp.business;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Bank {
@@ -54,5 +55,16 @@ public class Bank {
        }
        
        return backList;
+    }
+    
+    public List<Account> getAccountByCustomer(int number) {
+        List<Account> listCompte = new ArrayList<>();
+        
+        for(Account compte : listAccount) {
+            if(compte.getCustomer().getNumber() == number) {
+                listCompte.add(compte);
+            }
+        }
+        return listCompte;
     }
 }

@@ -3,15 +3,9 @@ package ch.hearc.ig.odi.bankApp.beans;
 import ch.hearc.ig.odi.bankApp.services.Services;
 import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
-import javax.faces.model.DataModel;
-import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-/**
- *
- * @author Francois Gatherat <francois.gatherat@he-arc.ch>
- */
 @Named(value="customerBean")
 @RequestScoped
 public class CustomerCreateBean implements Serializable {

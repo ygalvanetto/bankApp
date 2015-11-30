@@ -1,5 +1,6 @@
 package ch.hearc.ig.odi.bankApp.services;
 
+import ch.hearc.ig.odi.bankApp.business.Account;
 import ch.hearc.ig.odi.bankApp.business.Bank;
 import ch.hearc.ig.odi.bankApp.business.Customer;
 import java.io.Serializable;
@@ -19,6 +20,8 @@ import javax.enterprise.context.SessionScoped;
 public class Services implements Serializable{
     
     private Bank bank;
+    Customer clientEdit;
+    Account compteEdit;
     
     public Services(){
         bank = new Bank(1, "Raiffeisen Neuchâtel");
@@ -67,5 +70,29 @@ public class Services implements Serializable{
      */
     public List<Customer> getCustomersList(){
         return new ArrayList(getCustomers().values());
+    }
+    
+    public List<Account> getAccountByCustomer () {
+        List account = new ArrayList<>();
+        int numberCustomer = returnClientEdit().getNumber();
+        account = bank.getAccountByCustomer(numberCustomer);
+        
+        return account;
+    }
+    
+    public void clientEdit (Customer cust){
+        clientEdit = new Customer(cust.getNumber(), cust.getFirstName(), cust.getLastName());
+    }
+    
+    public Customer returnClientEdit () {
+        return clientEdit;
+    }
+    
+    public void compteEdit (Customer cust, Account compte) {
+        compteEdit = new Account(cust, compte.getNumber(), compte.getName(), compte.getRate());
+    }
+    
+    public Account returnCompteEdit () {
+        return compteEdit;
     }
 }

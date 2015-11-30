@@ -35,4 +35,11 @@ public class CustomersBean implements Serializable {
         return customersDM;
     }
     
+    public String detailCustomer (Customer cust){
+        
+        services.clientEdit(cust);
+        
+        return "detailsDuClient";
+    }
+    
 }
