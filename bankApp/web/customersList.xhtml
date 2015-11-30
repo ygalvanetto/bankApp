@@ -11,7 +11,7 @@
             <h2>Liste des clients</h2>
             <h:form>
                 <h:dataTable var="cust" value="#{customersbean.customersDM}">
-                    <h:column>
+                        <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{msg['prenom']}" />
                             </f:facet>
@@ -27,7 +27,6 @@
                 </h:dataTable>
 
                 <br/><br/>
-                
                 <h:commandButton id="addCustomer" value="#{msg['addClient']}" action="createCustomer"/>
             </h:form>
         </h:body>
