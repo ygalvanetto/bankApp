@@ -6,21 +6,34 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Nouveau client</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </h:head>
-    <h:body>
-        <div>Création d'un nouveau client</div><br/>
-        
-       <form method="GET"  action="../InsertClient">
-            Numero : <input type="number" name="numero" /> <br/>
-            Nom : <input type="text" name="nom" /> <br/>
-            Prénom : <input type="text" name="prenom" /> <br/>
-            <input type="button" value="Réinitialiser" />
-            <input type="submit" value="Valider" />
-            <input type="button" value="Annuler" />
-        </form>
-    </h:body>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   <f:view>
+        <h:head>
+            <title>Bank App</title>
+            <f:loadBundle basename="ch.hearc.ig.odi.bankApp.langues.message" var="msg" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        </h:head>
+        <h:body>
+            <h1>#{msg['titreAddClient']} </h1>
+            
+            <h:form>
+                <h:outputText value="#{msg['numero']} : " />
+                <h:inputText id="numero" value="#{customerBean.number}" required="true" requiredMessage="#{msg['entrerNum']}" />
+                <br></br>  
+                <h:outputText value="#{msg['prenom']} : " />
+                <h:inputText id="prenom" value="#{customerBean.firstName}" required="true" requiredMessage="#{msg['entrerPrenom']}"/>
+                <br></br> 
+                <h:outputText value="#{msg['nom']} : " />
+                <h:inputText id="nom" value="#{customerBean.lastName}" required="true" requiredMessage="#{msg['entrerNom']}" />
+                <br></br> 
+                <br></br>
+                <h:commandButton id="btAdd" type="submit" value="#{msg['btAddClient']}" action="#{customerBean.add}"/>
+                <h:commandButton id="btRenit" type="submit" value="#{msg['btRenit']}" action="renitialiserAjout"/>
+                <br></br>
+                <br></br>
+                <h:commandButton id="btAnnuler" type="submit" value="#{msg['btAnnuler']}" action="annulerAjout"/>
+            </h:form>
+        </h:body>
+   </f:view>
 </html>

@@ -7,22 +7,22 @@
     <application>
         
         <resource-bundle>
-            <base-name>langue.message</base-name>
+            <base-name>ch.hearc.ig.odi.bankApp.langues.message</base-name>
             <var>msg</var>
         </resource-bundle>
 
         <locale-config>
             <default-locale>en</default-locale>
-            <supported-locale>fr_FR</supported-locale>
+            <supported-locale>en</supported-locale>
         </locale-config>
         
         <navigation-rule>
-           <from-view-id>/customersList.xhtml</from-view-id>
-           <navigation-case>
+            <from-view-id>/customersList.xhtml</from-view-id>
+            <navigation-case>
                <from-outcome>createCustomer</from-outcome>
                <to-view-id>/createCustomer.xhtml</to-view-id>
-           </navigation-case>
-       </navigation-rule>
+            </navigation-case>
+        </navigation-rule>
            
      </application>
      
